@@ -1,2 +1,5 @@
-# OMDB-API
-Utilizando a API OMDB com html, css e js, guiado pelo curso da Hashtag Treinamentos
+### Recursos Externos Utilizados
+
+- [API OMDB](https://www.omdbapi.com)
+- [Biblioteca BootstrapIcons](https://icons.getbootstrap.com)
+- [Biblioteca Notie.JS](https://github.com/jaredreich/notie)
