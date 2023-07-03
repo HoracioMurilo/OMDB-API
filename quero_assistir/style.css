@@ -33,16 +33,46 @@ header > h2 > i {
 
 .movie-name-wrapper {
     width: 65%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .movie-year-wrapper {
     width: 30%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 #search-button {
     width: 5%;
+    all: unset;
+    padding: 0.3rem;
+    border: 2px solid var(--ligthest-color);
+    border-radius: 10px;
 }
+
+#search-button:focus, #search-button:hover {
+    background-color: var(--light-primary);
+}
+
 
 .movie-year-wrapper > input {
     max-width: 5rem;
+}
+
+.movie-name-wrapper > input {
+    width: 100%;
+}
+
+.movie-name-wrapper > input, .movie-year-wrapper > input {
+    margin: 0.5rem;
+    border-radius: 7px;
+    padding: 0.3rem 0.2rem;
+    font-weight: bold;
+}
+
+.movie-name-wrapper > label, .movie-year-wrapper > label {
+    font-weight: bold;
 }
