@@ -13,6 +13,12 @@
     font-family: sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -77,3 +83,11 @@ header > h2 > i {
 .movie-name-wrapper > label, .movie-year-wrapper > label {
     font-weight: bold;
 }
+
+main {
+    text-align: center;
+    background-color: var(--ligthest-color);
+    color: var(--primary-color);
+    flex-grow: 1;
+    padding: 2rem 0;
+}	
