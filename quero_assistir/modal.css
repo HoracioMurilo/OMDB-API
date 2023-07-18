@@ -32,3 +32,40 @@
   padding: 1rem 3rem;
   border-radius: 10px;
 }
+
+#movie-title {
+  padding: 1rem 0;
+}
+
+#modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+#movie-poster {
+  border-radius: 10px;
+  box-shadow: #202924 0px 0px 5px;
+  max-width: 350px;
+}
+
+#movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 300px;
+}
+
+#add-to-list {
+    border: 2px solid var(--primary-color);
+    padding: 0.3rem 0;
+    width: 100%;
+    border-radius: 10px;
+    font-size: bold;
+    box-shadow: #000 1px 1px 10px;
+}
+
+#add-to-list:hover, #add-to-list:focus {
+    background-color: var(--primary-color);
+    color: var(--ligthest-color);
+}
