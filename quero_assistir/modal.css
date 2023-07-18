@@ -1,34 +1,34 @@
 :root {
-    --primary-color: #F4ACB7;
-    --light-primary: #D8E2DC;
-    --ligthest-color: #FFE5D9;
-    --secundary-color: #FFCAD4;
-    --light-secondary: #9D8189;
+  --primary-color: #f4acb7;
+  --light-primary: #d8e2dc;
+  --ligthest-color: #ffe5d9;
+  --secundary-color: #ffcad4;
+  --light-secondary: #9d8189;
 }
 
 #modal-overlay {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100dvh;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  justify-content: center;
+  align-items: center;
 }
 
 #modal-background {
-    background-color: var(--light-primary);
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    position: absolute;
-    z-index: 0;
+  background-color: var(--light-primary);
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  position: absolute;
+  z-index: 0;
 }
 
 #modal-container {
-    background-color: var(--ligthest-color);
-    z-index: 1;
-    padding: 1rem 3rem;
-    border-radius: 10px;
+  background-color: var(--ligthest-color);
+  z-index: 1;
+  padding: 1rem 3rem;
+  border-radius: 10px;
 }
