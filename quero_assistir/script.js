@@ -5,13 +5,16 @@ const movieYear = document.getElementById("movie-year");
 
 async function searchButtonClickHandler() {
   try {
-    let url = `http://omdbapi.com/?apikey=${key}&t=${movieNameParameterGenerator()}&y=${movieYearParameterGenerator()}`;
+    let url = `http://omdbapi.com/?apikey=${key}&t=${movieNameParameterGenerator()}${movieYearParameterGenerator()}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
+    if(data.Error){
+        throw new Error('Movie not found');
+    }
     overlay.classList.add("open");
-  } catch (error) {
-    console.error(error.message);
+} catch (error) {
+    notie.alert({ type: "error", text: error.message });
   }
 }
 
@@ -24,14 +27,14 @@ function movieNameParameterGenerator() {
 
 function movieYearParameterGenerator() {
   if (movieYear.value === "") {
-    throw new Error("Movie year is empty");
+    return "";
   }
 
   if (movieYear.value.length !== 4 || isNaN(movieYear.value)) {
     throw new Error("Movie year is invalid");
   }
 
-  return movieYear.value;
+  return `&y=${movieYear.value}`;
 }
 
 searchButton.addEventListener("click", searchButtonClickHandler);
