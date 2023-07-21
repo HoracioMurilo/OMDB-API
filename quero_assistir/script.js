@@ -12,6 +12,7 @@ async function searchButtonClickHandler() {
     if(data.Error){
         throw new Error('Movie not found');
     }
+    createModal(data);
     overlay.classList.add("open");
 } catch (error) {
     notie.alert({ type: "error", text: error.message });
