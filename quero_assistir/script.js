@@ -12,12 +12,12 @@ async function searchButtonClickHandler() {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
-    if(data.Error){
-        throw new Error('Movie not found');
+    if (data.Error) {
+      throw new Error("Movie not found");
     }
     createModal(data);
     overlay.classList.add("open");
-} catch (error) {
+  } catch (error) {
     notie.alert({ type: "error", text: error.message });
   }
 }
@@ -43,6 +43,20 @@ function movieYearParameterGenerator() {
 
 function addToList(data) {
   movieList.push(data);
+  updateUI(data);
+  overlay.classList.remove('open')
+}
+
+function updateUI(data) {
+  movieListContainer.innerHTML += `<article>
+  <img
+    src=${data.Poster}
+    alt="Poster do ${data.Title}."
+  />
+  <button class="remove-button">
+    <i class="bi bi-trash"></i> Remover
+  </button>
+</article>`;
 }
 
 searchButton.addEventListener("click", searchButtonClickHandler);
