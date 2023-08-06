@@ -57,7 +57,7 @@ function updateUI(data) {
     src=${data.Poster}
     alt="Poster do ${data.Title}."
   />
-  <button class="remove-button">
+  <button class="remove-button" onclick='{removeFilmFromList("${data.imdbID}")}'>
     <i class="bi bi-trash"></i> Remover
   </button>
 </article>`;
@@ -68,6 +68,11 @@ function isFilmAlreadyOnTheList(imdbId) {
     return movie.imdbID === imdbId;
   }
   return movieList.find(isThisIdFromThisMovie);
+}
+
+function removeFilmFromList(imdbId) {
+  movieList = movieList.filter(movie => movie.imdbID !== imdbId);
+  document.getElementById(`movie-card-${imdbId}`).remove();
 }
 
 searchButton.addEventListener("click", searchButtonClickHandler);
