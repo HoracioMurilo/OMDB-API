@@ -42,13 +42,17 @@ function movieYearParameterGenerator() {
 }
 
 function addToList(data) {
+  if (isFilmAlreadyOnTheList(data.imdbID)) {
+    notie.alert({ type: "error", text: "Filme já está na lista" });
+    return;
+  };
   movieList.push(data);
   updateUI(data);
   overlay.classList.remove('open')
 }
 
 function updateUI(data) {
-  movieListContainer.innerHTML += `<article>
+  movieListContainer.innerHTML += `<article id='movie-card-${data.imdbID}'>
   <img
     src=${data.Poster}
     alt="Poster do ${data.Title}."
@@ -57,6 +61,13 @@ function updateUI(data) {
     <i class="bi bi-trash"></i> Remover
   </button>
 </article>`;
+}
+
+function isFilmAlreadyOnTheList(imdbId) {
+  function isThisIdFromThisMovie(movie) {
+    return movie.imdbID === imdbId;
+  }
+  return movieList.find(isThisIdFromThisMovie);
 }
 
 searchButton.addEventListener("click", searchButtonClickHandler);
